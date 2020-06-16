@@ -1,4 +1,7 @@
 import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class LibraryTest {
     private Library library;
@@ -10,5 +13,10 @@ public class LibraryTest {
         library = new Library(2);
         book1 = new Book("The Missing of Clairdelune", "Christelle Dabos", "Fantasy");
         book2 = new Book("A Memory Called Empire", "Arkady Martine", "Science Fiction");
+    }
+
+    @Test
+    public void collectionStartsEmpty() {
+        assertEquals(0, library.countBooks());
     }
 }
