@@ -14,7 +14,7 @@ public class Library {
     }
 
     public boolean stockFull() {
-        return countBooks() == this.capacity;
+        return this.countBooks() == this.capacity;
     }
 
     public void addBook(Book book) {
