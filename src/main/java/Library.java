@@ -16,4 +16,8 @@ public class Library {
     public void addBook(Book book) {
         this.collection.add(book);
     }
+
+    public boolean stockFull() {
+        return countBooks() == this.capacity;
+    }
 }
