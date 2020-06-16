@@ -36,7 +36,11 @@ public class Library {
         }
     }
 
-    public int countGenres() {
+    public int countDistinctGenres() {
         return this.booksByGenre.size();
+    }
+
+    public int countByGenre(String genre) {
+        return this.booksByGenre.getOrDefault(genre, 0);
     }
 }
