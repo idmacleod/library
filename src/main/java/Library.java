@@ -1,12 +1,15 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Library {
     private ArrayList<Book> collection;
     private int capacity;
+    private HashMap<String, Integer> booksByGenre;
 
     public Library(int capacity) {
         this.collection = new ArrayList<Book>();
         this.capacity = capacity;
+        this.booksByGenre = new HashMap<String, Integer>();
     }
 
     public int countBooks() {
@@ -31,5 +34,9 @@ public class Library {
         if (hasBook(book)) {
             this.collection.remove(book);
         }
+    }
+
+    public int countGenres() {
+        return this.booksByGenre.size();
     }
 }

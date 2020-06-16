@@ -83,12 +83,12 @@ public class LibraryTest {
         assertEquals(0, library.countGenres());
     }
 
-    @Test
-    public void canCountBooksByGenre() {
-        library.addBook(book1);
-        library.addBook(book3);
-        library.addBook(book4);
-        assertEquals(1, library.countByGenre("Fantasy"));
-        assertEquals(2, library.countByGenre("Children's"));
-    }
+//    @Test
+//    public void canCountBooksByGenre() {
+//        library.addBook(book1);
+//        library.addBook(book3);
+//        library.addBook(book4);
+//        assertEquals(1, library.countByGenre("Fantasy"));
+//        assertEquals(2, library.countByGenre("Children's"));
+//    }
 }
