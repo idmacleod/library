@@ -92,5 +92,10 @@ public class LibraryTest {
         library.addBook(book4);
         assertEquals(1, library.countByGenre("Fantasy"));
         assertEquals(2, library.countByGenre("Children's"));
+        library.removeBook(book3);
+        assertEquals(1, library.countByGenre("Children's"));
+        library.removeBook(book4);
+        assertEquals(0, library.countByGenre("Children's"));
+        assertEquals(0, library.countByGenre("Crime"));
     }
 }
