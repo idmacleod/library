@@ -66,7 +66,7 @@ public class LibraryTest {
         library.addBook(book1);
         library.addBook(book2);
         library.removeBook(book1);
-        assertFalse(library.hasBook());
+        assertFalse(library.hasBook(book1));
     }
 
     @Test

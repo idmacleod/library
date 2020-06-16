@@ -13,7 +13,7 @@ public class Borrower {
         return this.name;
     }
 
-    public int booksBorrowed() {
+    public int countBooks() {
         return this.collection.size();
     }
 

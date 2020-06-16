@@ -26,4 +26,10 @@ public class Library {
     public boolean hasBook(Book book) {
         return this.collection.contains(book);
     }
+
+    public void removeBook(Book book) {
+        if (hasBook(book)) {
+            this.collection.remove(book);
+        }
+    }
 }

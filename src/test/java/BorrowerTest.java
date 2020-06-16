@@ -25,7 +25,13 @@ public class BorrowerTest {
 
     @Test
     public void collectionStartsEmpty() {
-        assertEquals(0, borrower.booksBorrowed());
+        assertEquals(0, borrower.countBooks());
+    }
+
+    @Test
+    public void canAddBook() {
+        borrower.addBook(book1);
+        assertEquals(1, borrower.countBooks());
     }
 
 //    @Test
