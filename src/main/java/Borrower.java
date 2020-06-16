@@ -25,6 +25,12 @@ public class Borrower {
         return this.collection.contains(book);
     }
 
+    public void removeBook(Book book) {
+        if (hasBook(book)) {
+            this.collection.remove(book);
+        }
+    }
+
     public void borrowBook(Book book, Library library) {
         if (library.hasBook(book)) {
             library.removeBook(book);
