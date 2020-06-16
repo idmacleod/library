@@ -35,6 +35,21 @@ public class BorrowerTest {
     }
 
     @Test
+    public void canRemoveBook() {
+        borrower.addBook(book1);
+        borrower.addBook(book2);
+        borrower.removeBook(book1);
+        assertEquals(1, borrower.countBooks());
+    }
+
+    @Test
+    public void cannotRemoveBookIfBorrowerDoesNotHave() {
+        borrower.addBook(book1);
+        borrower.removeBook(book2);
+        assertEquals(1, borrower.countBooks());
+    }
+
+    @Test
     public void canBorrowBookFromLibrary() {
         borrower.borrowBook(book1, library);
         assertTrue(borrower.hasBook(book1));
