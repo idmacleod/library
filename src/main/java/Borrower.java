@@ -26,7 +26,7 @@ public class Borrower {
     }
 
     public void removeBook(Book book) {
-        if (hasBook(book)) {
+        if (this.hasBook(book)) {
             this.collection.remove(book);
         }
     }
@@ -35,6 +35,13 @@ public class Borrower {
         if (library.hasBook(book)) {
             library.removeBook(book);
             this.addBook(book);
+        }
+    }
+
+    public void returnBook(Book book, Library library) {
+        if (this.hasBook(book)) {
+            this.removeBook(book);
+            library.addBook(book);
         }
     }
 }
