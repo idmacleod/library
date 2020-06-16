@@ -16,4 +16,8 @@ public class Borrower {
     public int booksBorrowed() {
         return this.collection.size();
     }
+
+    public boolean hasBook(Book book) {
+        return this.collection.contains(book);
+    }
 }

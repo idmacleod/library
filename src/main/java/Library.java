@@ -22,4 +22,8 @@ public class Library {
             this.collection.add(book);
         }
     }
+
+    public boolean hasBook(Book book) {
+        return this.collection.contains(book);
+    }
 }
