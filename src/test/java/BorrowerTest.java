@@ -28,17 +28,17 @@ public class BorrowerTest {
         assertEquals(0, borrower.booksBorrowed());
     }
 
-    @Test
-    public void canBorrowBookFromLibrary() {
-        borrower.borrow(book1, library);
-        assertTrue(borrower.hasBook(book1));
-        assertFalse(library.hasBook(book1));
-    }
+//    @Test
+//    public void canBorrowBookFromLibrary() {
+//        borrower.borrow(book1, library);
+//        assertTrue(borrower.hasBook(book1));
+//        assertFalse(library.hasBook(book1));
+//    }
 
-    @Test
-    public void cannotBorrowBookIfLibraryDoesNotHave() {
-        borrower.borrow(book2, library);
-        assertFalse(borrower.hasBook(book2));
-        assertFalse(library.hasBook(book2));
-    }
+//    @Test
+//    public void cannotBorrowBookIfLibraryDoesNotHave() {
+//        borrower.borrow(book2, library);
+//        assertFalse(borrower.hasBook(book2));
+//        assertFalse(library.hasBook(book2));
+//    }
 }

@@ -48,4 +48,31 @@ public class LibraryTest {
         library.addBook(book3);
         assertEquals(2, library.countBooks());
     }
+
+    @Test
+    public void canCheckHasBook() {
+        library.addBook(book1);
+        assertTrue(library.hasBook(book1));
+    }
+
+    @Test
+    public void canCheckDoesNotHaveBook() {
+        library.addBook(book1);
+        assertFalse(library.hasBook(book2));
+    }
+
+    @Test
+    public void canRemoveBook() {
+        library.addBook(book1);
+        library.addBook(book2);
+        library.removeBook(book1);
+        assertFalse(library.hasBook());
+    }
+
+    @Test
+    public void cannotRemoveBookIfLibraryDoesNotHave() {
+        library.addBook(book1);
+        library.removeBook(book2);
+        assertEquals(1, library.countBooks());
+    }
 }
