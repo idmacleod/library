@@ -12,7 +12,7 @@ public class LibraryTest {
 
     @Before
     public void before() {
-        library = new Library(2);
+        library = new Library(3);
         book1 = new Book("The Missing of Clairdelune", "Christelle Dabos", "Fantasy");
         book2 = new Book("A Memory Called Empire", "Arkady Martine", "Science Fiction");
         book3 = new Book("Moominland Midwinter", "Tove Jansson", "Children's");
@@ -34,6 +34,7 @@ public class LibraryTest {
     public void canCheckStockFull() {
         library.addBook(book1);
         library.addBook(book2);
+        library.addBook(book3);
         assertTrue(library.stockFull());
     }
 
@@ -48,7 +49,8 @@ public class LibraryTest {
         library.addBook(book1);
         library.addBook(book2);
         library.addBook(book3);
-        assertEquals(2, library.countBooks());
+        library.addBook(book4);
+        assertEquals(3, library.countBooks());
     }
 
     @Test

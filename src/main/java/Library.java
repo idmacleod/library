@@ -23,6 +23,9 @@ public class Library {
     public void addBook(Book book) {
         if (!stockFull()) {
             this.collection.add(book);
+            String genre = book.getGenre();
+            int oldCount = this.countByGenre(genre);
+            this.booksByGenre.put(genre, oldCount + 1);
         }
     }
 
@@ -33,6 +36,9 @@ public class Library {
     public void removeBook(Book book) {
         if (hasBook(book)) {
             this.collection.remove(book);
+            String genre = book.getGenre();
+            int oldCount = this.countByGenre(genre);
+            this.booksByGenre.put(genre, oldCount - 1);
         }
     }
 
