@@ -25,7 +25,7 @@ public class Borrower {
         return this.collection.contains(book);
     }
 
-    public void borrow(Book book, Library library) {
+    public void borrowBook(Book book, Library library) {
         if (library.hasBook(book)) {
             library.removeBook(book);
             this.addBook(book);
