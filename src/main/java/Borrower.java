@@ -24,4 +24,11 @@ public class Borrower {
     public boolean hasBook(Book book) {
         return this.collection.contains(book);
     }
+
+    public void borrow(Book book, Library library) {
+        if (library.hasBook(book)) {
+            library.removeBook(book);
+            this.addBook(book);
+        }
+    }
 }
