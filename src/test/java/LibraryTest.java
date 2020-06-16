@@ -1,8 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class LibraryTest {
     private Library library;
@@ -32,5 +31,11 @@ public class LibraryTest {
         library.addBook(book1);
         library.addBook(book2);
         assertTrue(library.stockFull());
+    }
+
+    @Test
+    public void canCheckStockNotFull() {
+        library.addBook(book1);
+        assertFalse(library.stockFull());
     }
 }
