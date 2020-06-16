@@ -8,4 +8,8 @@ public class Library {
         this.collection = new ArrayList<Book>();
         this.capacity = capacity;
     }
+
+    public int countBooks() {
+        return this.collection.size();
+    }
 }
