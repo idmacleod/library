@@ -13,11 +13,13 @@ public class Library {
         return this.collection.size();
     }
 
-    public void addBook(Book book) {
-        this.collection.add(book);
-    }
-
     public boolean stockFull() {
         return countBooks() == this.capacity;
+    }
+
+    public void addBook(Book book) {
+        if (!stockFull()) {
+            this.collection.add(book);
+        }
     }
 }
