@@ -8,6 +8,7 @@ public class BorrowerTest {
     private Library library;
     private Book book1;
     private Book book2;
+    private Book book3;
 
     @Before
     public void before() {
@@ -15,7 +16,9 @@ public class BorrowerTest {
         library = new Library(2);
         book1 = new Book("The Missing of Clairdelune", "Christelle Dabos", "Fantasy");
         book2 = new Book("A Memory Called Empire", "Arkady Martine", "Science Fiction");
+        book3 = new Book("Moominland Midwinter", "Tove Jansson", "Children's");
         library.addBook(book1);
+        library.addBook(book3);
     }
 
     @Test
@@ -59,6 +62,23 @@ public class BorrowerTest {
     @Test
     public void cannotBorrowBookIfLibraryDoesNotHave() {
         borrower.borrowBook(book2, library);
+        assertFalse(borrower.hasBook(book2));
+        assertFalse(library.hasBook(book2));
+    }
+
+    @Test
+    public void canReturnBookToLibrary() {
+        borrower.borrowBook(book1, library);
+        borrower.borrowBook(book3, library);
+        borrower.returnBook(book1, library);
+        assertFalse(borrower.hasBook(book1));
+        assertTrue(library.hasBook(book1));
+    }
+
+    @Test
+    public void cannotReturnBookIfBorrowerDoesNotHave() {
+        borrower.borrowBook(book1, library);
+        borrower.returnBook(book2, library);
         assertFalse(borrower.hasBook(book2));
         assertFalse(library.hasBook(book2));
     }
